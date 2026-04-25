@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="sidebar.css">
+</head>
+<body class="sidebar-body">
+    <div class="header">
+        <div class="title-group">
+            <h2 class="title">Privacy Analysis</h2>
+            <p class="subtitle" id="file-name">No file selected</p>
+        </div>
+        <button id="close-btn" class="close-btn">✕</button>
+    </div>
+
+    <div class="content">
+        <div id="loader" class="loader-container hidden">
+            <div class="spinner"></div>
+            <p>Scanning for sensitive data...</p>
+        </div>
+
+        <div id="results" class="results-container hidden">
+            <h3 class="section-title">Detected Sensitive Data</h3>
+            <div id="findings-list" class="findings-list">
+                <!-- Findings will be injected here -->
+            </div>
+
+            <div class="actions-group">
+                <button id="mask-all-btn" class="btn btn-secondary">Mask All Sensitive Data</button>
+            </div>
+            
+            <div class="preview-container">
+                <p class="section-title">Preview</p>
+                <div id="file-preview" class="file-preview">
+                    <canvas id="mask-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div id="empty-state" class="empty-state">
+            <p>Scanning document securely on your machine...</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <button id="upload-original" class="btn btn-ghost">Upload Original</button>
+        <button id="upload-masked" class="btn btn-primary">Upload Masked</button>
+        <button id="download-masked" class="btn btn-outline">Download Masked</button>
+    </div>
+
+    <script src="sidebar.js"></script>
+</body>
+</html>

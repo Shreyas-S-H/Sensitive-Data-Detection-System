@@ -1,0 +1,2 @@
+# Tesseract.js Placeholder
+Placeholder for tesseract.min.js. See README for download instructions.

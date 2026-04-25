@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="sdg-popup">
+    <div class="header">
+        <h1>SHIELD <span style="color: var(--sdg-danger)">ENGINE</span></h1>
+        <div class="version">V1.0.4 // ACTIVE</div>
+    </div>
+
+    <div class="content">
+        <div class="status-card">
+            <span class="status-label">System Guard</span>
+            <label class="switch">
+                <input type="checkbox" id="shield-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="section-title">Live Detection Feed</div>
+        
+        <div id="history-container">
+            <div class="empty-state" style="text-align: center; color: var(--sdg-gray-500); padding: 40px 0; font-size: 11px; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.1em;">
+                Scanning for threats...
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

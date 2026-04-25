@@ -1,0 +1,191 @@
+/* 
+  Sensitive Data Guard - BOLD TYPOGRAPHY THEME
+  High contrast, aggressive headings, and technical mono accents.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --sdg-danger: #FF3E3E;
+  --sdg-success: #00FF41;
+  --sdg-dark: #050505;
+  --sdg-light: #FFFFFF;
+  --sdg-gray-500: #8E8E93;
+  --sdg-gray-900: #1C1C1E;
+}
+
+/* Base Body Styles for Popup */
+body.sdg-popup {
+  width: 320px;
+  margin: 0;
+  background-color: var(--sdg-light);
+  color: var(--sdg-dark);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.header {
+  background-color: var(--sdg-dark);
+  color: white;
+  padding: 24px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid var(--sdg-danger);
+}
+
+.header h1 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.header .version {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+}
+
+.content {
+  padding: 20px;
+}
+
+/* Status Card - High Contrast */
+.status-card {
+  border: 2px solid var(--sdg-dark);
+  padding: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--sdg-light);
+}
+
+.status-label {
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--sdg-gray-500);
+  margin-bottom: 12px;
+}
+
+/* History List - Blocky & Bold */
+.history-item {
+  border-left: 4px solid var(--sdg-danger);
+  background: var(--sdg-dark);
+  color: white;
+  padding: 12px;
+  margin-bottom: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.history-item .type {
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--sdg-danger);
+}
+
+.history-item .url {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  opacity: 0.6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 4px;
+}
+
+/* Injected Warning Box - Red Bar Aesthetic */
+.sdg-injected-warning {
+  position: absolute;
+  z-index: 1000000;
+  background: var(--sdg-danger);
+  color: black;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(255, 62, 62, 0.4);
+  font-family: 'Inter', sans-serif;
+  min-width: 400px;
+  animation: sdgSlideIn 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+@keyframes sdgSlideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.sdg-warning-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sdg-icon-bold {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.sdg-text-bold {
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.sdg-close-btn-bold {
+  background: black;
+  color: white;
+  border: none;
+  font-weight: 900;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Toggle Switch - Minimalistic */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #EEE;
+  border: 2px solid var(--sdg-dark);
+  transition: .1s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px; width: 16px;
+  left: 2px; bottom: 2px;
+  background-color: var(--sdg-dark);
+  transition: .1s;
+}
+
+input:checked + .slider { background-color: var(--sdg-success); }
+input:checked + .slider:before { transform: translateX(24px); background-color: white; }

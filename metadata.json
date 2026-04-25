@@ -1,0 +1,6 @@
+{
+  "name": "Sensitive Data Guard - Chrome Extension",
+  "description": "A Chrome extension that detects and protects sensitive personal data (Aadhaar, PAN, DL) across all websites.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

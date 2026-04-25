@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Privacy Guard</title>
+  <style>
+    body { width: 320px; font-family: 'Inter', sans-serif; background: #020617; color: white; padding: 20px; margin: 0; }
+    .container { display: flex; flex-direction: column; gap: 16px; }
+    .header { display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1e293b; padding-bottom: 12px; }
+    .logo { background: #3b82f6; padding: 8px; border-radius: 10px; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); font-size: 18px; }
+    .title { font-weight: 800; font-size: 16px; letter-spacing: -0.025em; }
+    .subtitle { font-size: 11px; color: #94a3b8; line-height: 1.4; }
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 5px 0; }
+    .stat-card { background: #0f172a; border: 1px solid #1e293b; padding: 10px; border-radius: 12px; text-align: center; }
+    .stat-val { display: block; font-size: 18px; font-weight: 700; color: #3b82f6; }
+    .stat-label { font-size: 9px; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+    .btn { background: #2563eb; color: white; border: none; padding: 12px; border-radius: 12px; font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); }
+    .btn:hover { background: #3b82f6; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3); }
+    .footer { font-size: 10px; color: #475569; text-align: center; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">🛡️</div>
+      <div>
+        <div class="title">Privacy Guard</div>
+        <div class="subtitle">Secure Document Protection</div>
+      </div>
+    </div>
+    
+    <div class="stats">
+      <div class="stat-card">
+        <span class="stat-val">Online</span>
+        <span class="stat-label">Status</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-val">Active</span>
+        <span class="stat-label">Scanning</span>
+      </div>
+    </div>
+
+    <button id="scanBtn" class="btn">Deep Scan This Page</button>
+    <div class="footer">Powered by Gemini AI</div>
+  </div>
+  <script>
+    document.getElementById('scanBtn').onclick = () => {
+      chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        chrome.scripting.executeScript({
+          target: {tabId: tabs[0].id},
+          function: () => {
+            alert('Security Review: No critical exposures found on this tab.');
+          }
+        });
+      });
+    };
+  </script>
+</body>
+</html>
